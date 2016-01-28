@@ -24,7 +24,7 @@ $ composer require gwa/zero-module-id-columns
     protected function getModuleClasses()
     {
         return [
-            'Gwa\Wordpress\Zero\Module\CleanUpModule',
+            'Gwa\Wordpress\Zero\Module\IdColumnsModule',
         ];
     }
 ```
