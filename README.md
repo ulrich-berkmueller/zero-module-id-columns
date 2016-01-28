@@ -21,7 +21,12 @@ $ composer require gwa/zero-module-id-columns
 ## Usage
 
 ``` php
-echo "test";
+    protected function getModuleClasses()
+    {
+        return [
+            'Gwa\Wordpress\Zero\Module\CleanUpModule',
+        ];
+    }
 ```
 
 ## Change log
@@ -31,7 +36,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ composer test
+$ phpunit
 ```
 
 ## Contributing
