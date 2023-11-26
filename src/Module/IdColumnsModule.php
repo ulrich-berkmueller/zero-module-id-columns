@@ -50,15 +50,15 @@ class IdColumnsModule extends AbstractThemeModule
     public function addIdColumn()
     {
         foreach (get_taxonomies() as $taxonomy) {
-            $this->getWpBridge()->addAction("manage_edit-${taxonomy}_columns", [$this, 'addColumnId']);
-            $this->getWpBridge()->addFilter("manage_${taxonomy}_custom_column", [$this, 'addColumnReturnValue'], 10, 3);
-            $this->getWpBridge()->addFilter("manage_edit-${taxonomy}_sortable_columns", [$this, 'addColumnId']);
+            $this->getWpBridge()->addAction("manage_edit-{$taxonomy}_columns", [$this, 'addColumnId']);
+            $this->getWpBridge()->addFilter("manage_{$taxonomy}_custom_column", [$this, 'addColumnReturnValue'], 10, 3);
+            $this->getWpBridge()->addFilter("manage_edit-{$taxonomy}_sortable_columns", [$this, 'addColumnId']);
         }
 
         foreach (get_post_types() as $ptype) {
-            $this->getWpBridge()->addAction("manage_edit-${ptype}_columns", [$this, 'addColumnId']);
-            $this->getWpBridge()->addFilter("manage_${ptype}_posts_custom_column", [$this, 'addColumnIdValue'], 10, 3);
-            $this->getWpBridge()->addFilter("manage_edit-${ptype}_sortable_columns", [$this, 'addColumnId']);
+            $this->getWpBridge()->addAction("manage_edit-{$ptype}_columns", [$this, 'addColumnId']);
+            $this->getWpBridge()->addFilter("manage_{$ptype}_posts_custom_column", [$this, 'addColumnIdValue'], 10, 3);
+            $this->getWpBridge()->addFilter("manage_edit-{$ptype}_sortable_columns", [$this, 'addColumnId']);
         }
 
         $this->getWpBridge()->addAction('manage_media_custom_column', [$this, 'addColumnIdValue'], 10, 2);
